@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Animated,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import MaterialIcons from '@exponent/vector-icons';
 import { filter, some, includes } from 'lodash/collection';
 import { debounce } from 'lodash/function';
 
