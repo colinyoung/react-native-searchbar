@@ -14,6 +14,8 @@ import { debounce } from 'lodash/function';
 
 const INITIAL_TOP = Platform.OS === 'ios' ? -80 : -60;
 
+const Icon = MaterialIcons;
+
 export default class Search extends Component {
 
   static propTypes = {
