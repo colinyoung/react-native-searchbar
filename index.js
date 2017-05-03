@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import {
   StyleSheet,
-  Dimensions,
   Platform,
   View,
   TextInput,
@@ -238,7 +237,7 @@ export default class Search extends Component {
                 styles.input,
                 {
                   color: textColor, fontFamily: fontFamily, marginLeft: hideBack ? 30 : 0,
-                  marginTop: (Platform.OS === 'ios' ? heightAdjust / 2 + 10 : 0)
+                  marginTop: (Platform.OS === 'ios' ? heightAdjust / 2 + 16 : 0)
                 }
               ]}
               onChangeText={(input) => this._onChangeText(input)}
@@ -278,13 +277,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     zIndex: 10,
-    position: 'absolute',
     shadowRadius: 5,
     shadowOpacity: 0.7,
     elevation: 2,
+    marginBottom: 10
   },
   navWrapper: {
-    width: Dimensions.get('window').width,
+    alignSelf: 'stretch',
+    flex: 1
   },
   nav: {
     ...Platform.select({
@@ -304,7 +304,8 @@ const styles = StyleSheet.create({
         ios: { height: 30 },
         android: { height: 50 },
     }),
-    width: Dimensions.get('window').width - 120,
+    flex: 1,
+    paddingHorizontal: 20,
     fontSize: 20,
   }
 });
